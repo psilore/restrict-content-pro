@@ -132,11 +132,10 @@ rcp_show_error_messages( 'register' ); ?>
 	<?php endif; ?>
 
 	<?php do_action( 'rcp_before_registration_submit_field' ); ?>
-		<div class="bonk">
-			<p id="rcp_submit_wrap">
-				<input type="hidden" name="rcp_level" class="rcp_level" value="<?php echo absint( $rcp_level ); ?>" rel="<?php echo esc_attr( $level->price ); ?>" <?php if ( ! empty( $has_trial ) ) { echo 'data-has-trial="true"'; } ?> />
-				<input type="hidden" name="rcp_register_nonce" value="<?php echo wp_create_nonce('rcp-register-nonce' ); ?>"/>
-				<input type="submit" name="rcp_submit_registration" id="rcp_submit" value="<?php esc_attr_e( apply_filters ( 'rcp_registration_register_button', __( 'Register', 'rcp' ) ) ); ?>"/>
-			</p>
-		</div>
+
+	<p id="rcp_submit_wrap">
+		<input type="hidden" name="rcp_level" class="rcp_level" value="<?php echo absint( $rcp_level ); ?>" rel="<?php echo esc_attr( $level->price ); ?>" <?php if ( ! empty( $has_trial ) ) { echo 'data-has-trial="true"'; } ?> />
+		<input type="hidden" name="rcp_register_nonce" value="<?php echo wp_create_nonce('rcp-register-nonce' ); ?>"/>
+		<input type="submit" name="rcp_submit_registration" id="rcp_submit" value="<?php esc_attr_e( apply_filters ( 'rcp_registration_register_button', __( 'Register', 'rcp' ) ) ); ?>"/>
+	</p>
 </form>
