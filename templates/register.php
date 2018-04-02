@@ -35,7 +35,7 @@ $discount = ! empty( $_REQUEST['discount'] ) ? sanitize_text_field( $_REQUEST['d
 // show any error messages after form submission
 rcp_show_error_messages( 'register' ); ?>
 
-<form id="rcp_registration_form" class="rcp_form" method="POST" action="<?php echo esc_url( rcp_get_current_url() ); ?>">
+<form id="rcp_registration_form" class="rcp_form rcp-row-810-center" method="POST" action="<?php echo esc_url( rcp_get_current_url() ); ?>">
 
 	<?php if( ! is_user_logged_in() ) { ?>
 	<div class="row">
