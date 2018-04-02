@@ -159,10 +159,16 @@ rcp_show_error_messages( 'register' ); ?>
 		<?php endif; ?>
 	</div>
 
-		<?php do_action( 'rcp_before_registration_submit_field', $levels ); ?>
+		<div class="row">
+			<div class="col-xs-12 col-md-8">
+				<?php do_action( 'rcp_before_registration_submit_field', $levels ); ?>
+					</div>
+			<div class="col-xs-6 col-md-4">
+				<p id="rcp_submit_wrap">
+					<input type="hidden" name="rcp_register_nonce" value="<?php echo wp_create_nonce('rcp-register-nonce' ); ?>"/>
+					<input type="submit" name="rcp_submit_registration" id="rcp_submit" value="<?php esc_attr_e( apply_filters ( 'rcp_registration_register_button', __( 'Register', 'rcp' ) ) ); ?>"/>
+				</p>
+			</div>
+		</div>
 
-		<p id="rcp_submit_wrap">
-			<input type="hidden" name="rcp_register_nonce" value="<?php echo wp_create_nonce('rcp-register-nonce' ); ?>"/>
-			<input type="submit" name="rcp_submit_registration" id="rcp_submit" value="<?php esc_attr_e( apply_filters ( 'rcp_registration_register_button', __( 'Register', 'rcp' ) ) ); ?>"/>
-		</p>
 </form>
